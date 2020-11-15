@@ -9,7 +9,7 @@ import {GithubService} from '../services/github.service';
 })
 export class GithubsearchComponent implements OnInit {
 
-  users:User[];
+  users:User[]= [new User("","","")];
 
   constructor(private githubService:GithubService) { }
 
@@ -18,8 +18,12 @@ export class GithubsearchComponent implements OnInit {
       console.log(data.name)
       console.log(data.bio)
       console.log(data.avatar_url)
-      this.users.push(data.name,data.bio,data.avatar_url)
+      this.users.push(data);
     })
+  }
+
+  viewDetails(){
+    this.users[0].showDetails = !this.users[0].showDetails;
   }
 
   ngOnInit(): void {

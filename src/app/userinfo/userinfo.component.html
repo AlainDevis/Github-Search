@@ -1,1 +1,5 @@
-<p>{{user.name}}</p>
+<ul *ngFor="let usr of user">
+    <img src="{{usr.avatar_url}}" width="150px" height="150px">
+    <li>Username: {{usr.name}}</li>
+    <li>Bio: {{usr.bio}}</li>
+</ul>
