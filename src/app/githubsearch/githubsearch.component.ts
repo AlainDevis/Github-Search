@@ -8,14 +8,14 @@ import {GithubService} from '../services/github.service';
 })
 export class GithubsearchComponent implements OnInit {
 
-  user:string[];
+  userdata:string[];
 
   constructor(private githubService:GithubService) { }
 
   getUser(){
     this.githubService.getUserInfo().subscribe((data) => {
-      console.log(data);
-      this.user = data;
+      this.userdata = data;
+      // console.log(this.userdata);
     })
   }
 
