@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.header{
+    background-color: #11c4db;
+    height: 100px;
+    color: white;
+}
+
+.header > h1{
+    margin-top: 30px;
+}
+
+.search{
+    height: 40px;
+}
+
+.box{
+    background-color: #11c4db;
+}
+
+.footer{
+    background-color: #11c4db;
+    height: 50px;
+    color: white;
+}
+
+.footer > p{
+    margin-top: 15px;
+    font-weight: 20px;
+}
