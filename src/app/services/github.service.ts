@@ -7,5 +7,10 @@ import {Observable} from 'rxjs';
 })
 export class GithubService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  getUserInfo(): Observable<any>{
+    const Url="https://api.github.com/users/AlainDevis";
+    return this.http.get<any>(Url);
+  }
 }

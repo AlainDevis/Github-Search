@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubsearchComponent } from './githubsearch/githubsearch.component';
 import {HttpClientModule} from '@angular/common/http';
+import { UserinfoComponent } from './userinfo/userinfo.component';
+import { UserRepoComponent } from './user-repo/user-repo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GithubsearchComponent
+    GithubsearchComponent,
+    UserinfoComponent,
+    UserRepoComponent
   ],
   imports: [
     BrowserModule,

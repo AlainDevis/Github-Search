@@ -8,26 +8,24 @@
     <div class="row align-items-center search">
         <div class="col-md-12">
             <div class="search-container">
-                <form action="">
                   <input type="text" placeholder="Search.." name="search">
                   <button type="submit" (click)="getUser()"><i class="fa fa-search"></i></button>
-                </form>
               </div>
         </div>
     </div>
     <div class="row justify-content-around">
       <div class="col-md-5">
-       
+        <app-userinfo [user]="user"></app-userinfo>
       </div>
       <div class="col-md-6">
-          <div  class="box">
-            
+          <div >
+            <app-user-repo></app-user-repo>
           </div>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12 text-center footer">
         <p>Copyright &copy; 2020</p>
         </div>
-    </div>
+    </div> -->
   </div>

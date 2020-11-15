@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GithubService} from '../services/github.service';
 
 @Component({
   selector: 'app-githubsearch',
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GithubsearchComponent implements OnInit {
 
-  user:string;
+  user:string[];
+
+  constructor(private githubService:GithubService) { }
 
   getUser(){
-    
+    this.githubService.getUserInfo().subscribe((data) => {
+      console.log(data);
+      this.user = data;
+    })
   }
-
-  constructor() { }
 
   ngOnInit(): void {
   }
