@@ -13,6 +13,11 @@ export class GithubService {
     const Url="https://api.github.com/users/AlainDevis";
     return this.http.get<any>(Url);
   }
+
+  getReposInfo(): Observable<any>{
+    const Url="https://api.github.com/users/AlainDevis/repos";
+    return this.http.get<any>(Url);
+  }
 }
 
 // /AlainDevis
