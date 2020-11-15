@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../user';
 import {GithubService} from '../services/github.service';
 
 @Component({
@@ -8,14 +9,16 @@ import {GithubService} from '../services/github.service';
 })
 export class GithubsearchComponent implements OnInit {
 
-  userdata:string[];
+  users:User[];
 
   constructor(private githubService:GithubService) { }
 
   getUser(){
     this.githubService.getUserInfo().subscribe((data) => {
-      this.userdata = data;
-      // console.log(this.userdata);
+      console.log(data.name)
+      console.log(data.bio)
+      console.log(data.avatar_url)
+      this.users.push(data.name,data.bio,data.avatar_url)
     })
   }
 

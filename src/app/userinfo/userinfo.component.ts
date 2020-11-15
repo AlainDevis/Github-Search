@@ -8,11 +8,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class UserinfoComponent implements OnInit {
 
-  @Input() user:String[];
-  
-  print(){
-    console.log(this.user);
-  }
+  @Input() user:String;
 
   constructor() { }
 
