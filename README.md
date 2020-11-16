@@ -5,12 +5,13 @@
 
 In order to have access on the project you need the following installations:
 
-web browser
-GitHub
-Git
-Vs Code
-Internet
-Angular Js
+* web browser
+* GitHub
+* Git
+* Vs Code
+* Internet
+* Angular Js
+
 Check The Active pages here https://alaindevis.github.io/Quotes/
 
 Under the MIT license and copyright.
