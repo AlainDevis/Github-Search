@@ -21,10 +21,6 @@ export class GithubsearchComponent implements OnInit {
   getUser(search){
     this.githubService.getUserInfo(search).subscribe((data) => {
       this.users[0].showDetails = !this.users[0].showDetails;
-      // console.log(data.name)
-      // console.log(data.bio)
-      // console.log(data.avatar_url)
-      // console.log(data)
       console.log(search)
       this.users.push(data);
     })
@@ -34,8 +30,6 @@ export class GithubsearchComponent implements OnInit {
     this.githubService.getReposInfo(search).subscribe((data) => {
       for(let i=0;i<data.length;i++){
         this.repos[i].showDetails = !this.repos[i].showDetails;
-        console.log(data[i].name)
-        console.log(data[i].description)
         this.repos.push(data[i]);
       }
 
