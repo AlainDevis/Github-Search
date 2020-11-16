@@ -4,23 +4,23 @@
         <div class="col-md-12 text-center header">
             <h1>Github Search</h1>
         </div>
-    </div>
-    <div class="row align-items-center search">
-        <div class="col-md-12">
-            <div class="search-container">
+        <div class="col-md-12 text-center">
+            <div class="search">
                 <form (ngSubmit)='getUser(search)' #userForm='ngForm'>
                   <input type="text" placeholder="Search.." name="search" [(ngModel)]="search" #name='ngModel'>
-                  <button type="submit" (click)="getRepos(search)" ><i class="fa fa-search"></i></button>
+                  <button type="submit" (click)="getRepos(search)" (click)="viewDetails()"><i class="fa fa-search"></i></button>
                 </form>
               </div>
         </div>
     </div>
     <div class="row justify-content-around">
-      <div class="col-md-5">
-        <app-userinfo *ngIf='users.showDetails' [user]="users"></app-userinfo>
+      <div class="col-md-6">
+        <app-userinfo  [user]='users'></app-userinfo>
       </div>
       <div class="col-md-6">
-        <app-user-repo [repo]="repos"></app-user-repo>
+        <app-user-repo  [repo]="repos"></app-user-repo>
       </div>
     </div>
   </div>
+
+  <!-- *ngIf='users.showDetails' *ngIf='repos.showDetails' -->

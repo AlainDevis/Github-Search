@@ -15,9 +15,17 @@
     height: 40px;
 }
 
+.search > form{ 
+    margin-top: 10px;
+}
+
+.search  > form > input{
+    width: 450px;
+}
+
 .box{
     border-radius: 12px;
-    background-color: #11c4db;
+    background-color: #e3fafa;
     margin:10px;
 }
 

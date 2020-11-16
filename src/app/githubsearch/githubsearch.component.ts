@@ -26,7 +26,6 @@ export class GithubsearchComponent implements OnInit {
       console.log(data)
       console.log(search)
       this.users.push(data);
-      this.users[0].showDetails = !this.users[0].showDetails;
     })
   }
 
@@ -41,9 +40,10 @@ export class GithubsearchComponent implements OnInit {
     })
   }
 
-  // viewDetails(){
-  //   this.users[0].showDetails = !this.users[0].showDetails;
-  // }
+  viewDetails(){
+    this.users[0].showDetails = !this.users[0].showDetails;
+    this.repos[0].showDetails = !this.repos[0].showDetails;
+  }
 
   ngOnInit(): void {
     
