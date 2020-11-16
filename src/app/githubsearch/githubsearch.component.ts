@@ -12,7 +12,7 @@ export class GithubsearchComponent implements OnInit {
 
   search:String;
   @Output() username= new EventEmitter<String>();
-  users:User[] = [new User("","","")];
+  users: User[] = [new User("","","")];
   repos:Repository[] = [new Repository("","","")];
 
   
@@ -26,6 +26,7 @@ export class GithubsearchComponent implements OnInit {
       console.log(data)
       console.log(search)
       this.users.push(data);
+      this.users[0].showDetails = !this.users[0].showDetails;
     })
   }
 
