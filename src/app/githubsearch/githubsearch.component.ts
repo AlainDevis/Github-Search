@@ -20,10 +20,11 @@ export class GithubsearchComponent implements OnInit {
 
   getUser(search){
     this.githubService.getUserInfo(search).subscribe((data) => {
-      console.log(data.name)
-      console.log(data.bio)
-      console.log(data.avatar_url)
-      console.log(data)
+      this.users[0].showDetails = !this.users[0].showDetails;
+      // console.log(data.name)
+      // console.log(data.bio)
+      // console.log(data.avatar_url)
+      // console.log(data)
       console.log(search)
       this.users.push(data);
     })
@@ -32,6 +33,7 @@ export class GithubsearchComponent implements OnInit {
   getRepos(search){
     this.githubService.getReposInfo(search).subscribe((data) => {
       for(let i=0;i<data.length;i++){
+        this.repos[i].showDetails = !this.repos[i].showDetails;
         console.log(data[i].name)
         console.log(data[i].description)
         this.repos.push(data[i]);
@@ -40,10 +42,15 @@ export class GithubsearchComponent implements OnInit {
     })
   }
 
-  viewDetails(){
-    this.users[0].showDetails = !this.users[0].showDetails;
-    this.repos[0].showDetails = !this.repos[0].showDetails;
-  }
+  // viewDetails(){
+  //   this.users[0].showDetails = !this.users[0].showDetails;
+  //   console.log(this.users[0].showDetails);
+  // }
+
+  // repoDetails(index){
+  //   this.repos[index].showDetails = !this.repos[index].showDetails;
+  //   console.log(this.repos[index].showDetails);
+  // }
 
   ngOnInit(): void {
     
