@@ -12,6 +12,6 @@ In order to have access on the project you need the following installations:
 * Internet
 * Angular Js
 
-Check The Active pages here https://alaindevis.github.io/Quotes/
+Check The Active pages here https://alaindevis.github.io/Github-Search/
 
 Under the MIT license and copyright.
