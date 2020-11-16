@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { User } from '../user';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class UserinfoComponent implements OnInit {
 
-  @Input() user:String;
+  @Input() user:User;
 
   constructor() { }
 

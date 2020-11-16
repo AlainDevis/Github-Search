@@ -19,13 +19,19 @@ export class GithubsearchComponent implements OnInit {
       console.log(data.name)
       console.log(data.bio)
       console.log(data.avatar_url)
+      console.log(data)
       this.users.push(data);
     })
   }
 
   getRepos(){
     this.githubService.getReposInfo().subscribe((data) => {
-      console.log(data)
+      for(let i=0;i<data.length;i++){
+        console.log(data[i].name)
+        console.log(data[i].description)
+        this.repos.push(data[i]);
+      }
+
     })
   }
 
