@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {User} from '../user';
 import {Repository} from '../repository';
 import {GithubService} from '../services/github.service';
@@ -10,22 +10,27 @@ import {GithubService} from '../services/github.service';
 })
 export class GithubsearchComponent implements OnInit {
 
+  search:String;
+  @Output() username= new EventEmitter<String>();
   users:User[] = [new User("","","")];
   repos:Repository[] = [new Repository("","","")];
+
+  
   constructor(private githubService:GithubService) { }
 
-  getUser(){
-    this.githubService.getUserInfo().subscribe((data) => {
+  getUser(search){
+    this.githubService.getUserInfo(search).subscribe((data) => {
       console.log(data.name)
       console.log(data.bio)
       console.log(data.avatar_url)
       console.log(data)
+      console.log(search)
       this.users.push(data);
     })
   }
 
-  getRepos(){
-    this.githubService.getReposInfo().subscribe((data) => {
+  getRepos(search){
+    this.githubService.getReposInfo(search).subscribe((data) => {
       for(let i=0;i<data.length;i++){
         console.log(data[i].name)
         console.log(data[i].description)
@@ -40,6 +45,7 @@ export class GithubsearchComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+    
   }
 
 }

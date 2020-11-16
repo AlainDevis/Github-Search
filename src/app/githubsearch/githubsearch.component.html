@@ -8,8 +8,10 @@
     <div class="row align-items-center search">
         <div class="col-md-12">
             <div class="search-container">
-                  <input type="text" placeholder="Search.." name="search">
-                  <button type="submit" (click)="getUser()" (click)="getRepos()"><i class="fa fa-search"></i></button>
+                <form (ngSubmit)='getUser(search)' #userForm='ngForm'>
+                  <input type="text" placeholder="Search.." name="search" [(ngModel)]="search" #name='ngModel'>
+                  <button type="submit" (click)="getRepos(search)"><i class="fa fa-search"></i></button>
+                </form>
               </div>
         </div>
     </div>
@@ -17,7 +19,7 @@
       <div class="col-md-5">
         <app-userinfo  [user]="users"></app-userinfo>
       </div>
-      <div class="col-md-6" class="box">
+      <div class="col-md-6">
         <app-user-repo [repo]="repos"></app-user-repo>
       </div>
     </div>

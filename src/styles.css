@@ -16,7 +16,13 @@
 }
 
 .box{
+    border-radius: 12px;
     background-color: #11c4db;
+    margin:10px;
+}
+
+.box > a > p > h1{
+    margin:5px;
 }
 
 .footer{
