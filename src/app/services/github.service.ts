@@ -23,7 +23,7 @@ export class GithubService {
   getReposInfo(search:string): Observable<any>{
     const Url='https://api.github.com/users/'+[search] +'/repos';
     let promise = new Promise((resolve, reject) => {
-      let Url='https://api.github.com/users/'+[search];
+      let Url='https://api.github.com/users/'+[search]+'/repos';
       this.http.get<any>(Url).toPromise();
     });
     return this.http.get<any>(Url);
